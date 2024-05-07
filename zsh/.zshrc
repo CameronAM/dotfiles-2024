@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 bindkey -e
 
 # ===== HISTORY SETTINGS =====
@@ -24,22 +26,22 @@ compinit
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-  path+=("$HOME/bin" $path)
+  path=("$HOME/bin" $path)
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-  path+=("$HOME/.local/bin" $path)
+  path=("$HOME/.local/bin" $path)
 fi
 
 # add dotnet tools if they exist
 if [ -d "$HOME/.dotnet/tools" ] ; then
-  path+=("$HOME/.dotnet/tools" $path)
+  path=("$HOME/.dotnet/tools" $path)
 fi
 
 # set PATH so it includes bobbed nvim, if it exists
 if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
-  path+=("$HOME/.local/share/bob/nvim-bin" $path)
+  path=("$HOME/.local/share/bob/nvim-bin" $path)
 fi
 
 # ===== SHELL CONFIG =====
@@ -70,9 +72,9 @@ alias e='eza -l'
 alias ee='eza -laa'
 
 # nvm => the Node Volume Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fzf installation
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -80,4 +82,4 @@ export NVM_DIR="$HOME/.nvm"
 # starship prompt
 eval "$(starship init zsh)"
 
-
+# zprof
