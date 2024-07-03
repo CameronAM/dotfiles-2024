@@ -62,6 +62,9 @@ bindkey '^H' backward-kill-word
 # smart-ish case insensitive completion match (lower matches upper, upper does not match lower)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# integrate with wezterm
+source ~/.config/zsh/wezterm.sh
+
 # ==== ALIASES =====
 
 # aliases
@@ -72,9 +75,9 @@ alias e='eza -l'
 alias ee='eza -laa'
 
 # nvm => the Node Volume Manager
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fzf installation
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
