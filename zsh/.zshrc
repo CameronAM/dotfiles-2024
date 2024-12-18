@@ -44,6 +44,11 @@ if [ -d "$HOME/.local/share/bob/nvim-bin" ] ; then
   path=("$HOME/.local/share/bob/nvim-bin" $path)
 fi
 
+# set PATH so it includes cargo, if it exists
+if [ -d "$HOME/.cargo/bin" ] ; then
+  path=("$HOME/.cargo/bin" $path)
+fi
+
 # ===== SHELL CONFIG =====
 
 ### file name colours
@@ -80,7 +85,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fzf installation
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -x /usr/bin/fzf ] && source <(/usr/bin/fzf --zsh)
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # starship prompt
 eval "$(starship init zsh)"
