@@ -85,8 +85,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # fzf installation
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x /usr/bin/fzf ] && source <(/usr/bin/fzf --zsh)
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # starship prompt
 eval "$(starship init zsh)"
